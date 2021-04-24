@@ -1,0 +1,15 @@
+<br>
+<form>
+  <select (change)="onChangePolice(police.value)" #police>
+    <option value="arial" selected="selected"> arial</option>
+    <option value="Georgia">Georgia</option>
+    <option value="cursive">cursive</option>
+  </select>
+
+  <input type="number" value="24" (change)="onChangeSize(taille.value)" #taille>
+  <br>
+
+  <input type="radio" name="alignement" (click)="onChangeAlign('left')" checked> Gauche
+  <input type="radio" name="alignement" (click)="onChangeAlign('right')"> Droite
+  <input type="radio" name="alignement" (click)="onChangeAlign('center')"> Centré
+</form>
