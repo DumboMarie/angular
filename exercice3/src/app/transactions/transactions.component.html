@@ -1,0 +1,27 @@
+<div>
+  Trié par :
+  <select (change)="onTrie(f.value)" #f>
+    <option value="id">id</option>
+    <option value="amount">montant</option>
+    <option value="balance">solde</option>
+    <option value="label">label</option>
+    <option value="date">date</option>
+  </select><br>
+
+</div>
+<table style="width:100%">
+ <tr>
+   <th> id </th>
+   <th> montant </th>
+   <th> solde </th>
+   <th> label </th>
+   <th> date </th>
+ </tr>
+ <tr (click)="onAfficheDetail(transactions[i].id)" *ngFor="let transaction of transactions; let i = index">
+   <td> {{transactions[i].id}} </td>
+   <td> {{transactions[i].amount}} </td>
+   <td> {{transactions[i].balance}} </td>
+   <td> {{transactions[i].label}} </td>
+   <td> {{transactions[i].date | date: 'short' }} </td>
+ </tr>
+</table>

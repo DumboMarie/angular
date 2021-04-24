@@ -1,0 +1,7 @@
+<div>
+  {{ infoTransaction.id }} - {{ infoTransaction.label }} <br>
+  {{ infoTransaction.date | date: 'long'}} <br>
+  {{ infoTransaction.description }} <br>
+  Montant : {{ infoTransaction.amount }} <br>
+  Il vous reste : {{ infoTransaction.balance }}
+</div>

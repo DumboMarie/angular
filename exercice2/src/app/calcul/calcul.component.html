@@ -1,0 +1,26 @@
+<form (ngSubmit)="onCalcul(calcForm)" #calcForm="ngForm">
+  <input type="number" name="chiffre1" ngModel>
+  <select name="operateur" ngModel>
+    <option disabled> Opération usuelle </option>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" name="chiffre2" ngModel>
+  <button type="submit"> Calculer </button>
+</form><br>
+
+<div style="background: teal; padding: 20px">
+  = {{ resultat }}
+</div><br>
+
+<div style="background: olive; padding: 20px">
+  Historique :
+  <div *ngFor="let historique of historiques">
+    {{historique.heure | date: 'shortTime'}}  :
+    {{historique.operation}}
+    = {{ historique.res}}
+  </div>
+</div>
+<button type="button" (click)=onDelete()> Supprimer l'historique </button>
